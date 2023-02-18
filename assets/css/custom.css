@@ -1,0 +1,7 @@
+body>nav{
+    display: block;
+}
+
+main>.content{
+    overflow: auto;
+}
