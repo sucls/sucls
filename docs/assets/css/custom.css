@@ -1,7 +1,12 @@
-body>nav{
-    display: block;
-}
+/* .sidebar-nav ul ul ul{
+    display: none;
+} */
 
-main>.content{
-    overflow: auto;
+.app-name .title{
+    display: inline-flex;
+    align-items: center;
+}
+.app-name .title>span{
+    font-weight: normal;
+    color: rgb(34, 137, 226);
 }

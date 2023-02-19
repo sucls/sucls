@@ -1,7 +1,3 @@
-* [关于](/_about.md)
-* Getting started
+<!-- 欢迎页顶部导航栏 -->
 
-  * [Quick start](quickstart.md)
-  * [Writing more pages](more-pages.md)
-  * [Custom navbar](custom-navbar.md)
-  * [Cover page](cover.md)
+* [关于](/_about.md)

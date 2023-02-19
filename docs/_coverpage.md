@@ -1,14 +1,15 @@
+<!-- 欢迎页  -->
+
 <!-- _coverpage.md -->
 
 ![logo](_media/logo.png)
 
-# docsify <small>3.5</small>
+# 灰兔子 <small>Cycads</small>
 
-> A magical documentation site generator.
+> 分享编程过程，记录学习成果
 
-- Simple and lightweight
-- No statically built html files
-- Multiple themes
+- 一个Javaer
+- 
 
-[GitHub](https://github.com/docsifyjs/docsify/)
-[开始](/md/guide)
+[GitHub](https://github.com/sucls)
+[开始](/md/index)

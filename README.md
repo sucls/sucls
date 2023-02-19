@@ -8,17 +8,23 @@
 
 + 准备node环境
 + 下载docsify依赖 npm i docsify-cli -g
-+ 初始化项目 docsify init .
-+ 启动项目 docsify serve .
++ 初始化项目 docsify init docs
++ 启动项目 docsify serve ./docs
 + 访问博客 http://localhost:3000
 
 ## 目录结构
 ```
 └── docs/
+    ├── _media
+    ├── assets
+    ├── category
+    ├── md
+    ├── _coverpage.md
     ├── _sidebar.md
-    ├── index.md
-    ├── getting-started.md
-    └── running-services.md
+    ├── _navbar.md
+    ├── _about.md
+    └── index.html
+└── README.md    
 ```
 
 ### 目录结构说明
