@@ -32,16 +32,6 @@
   <div id="app"></div>
   
   <script>
-    var gitalkConfig = {
-      clientID: 'faa3a6842a42f880103d',
-      clientSecret: 'a45bdcc8c8a7d97559ed70f8884401138622d585',
-      repo: 'sucls.github.io',
-      owner: 'sucls',
-      admin: ['sucls'],
-      distractionFreeMode: false,
-      // id: decodeURI(window.location.pathname),
-    };
-
     ////////////////// 默认配置 //////////////////
     const defaultConfig = {
       name: '<div class="title"><img alt="灰兔子" src="/_media/logo.ico"><span>灰兔子</span></div>',
@@ -92,10 +82,8 @@
         }
       }
     }
-    
-    window.$docsify = Object.assign( { }, defaultConfig, markdownConfig, paginationConfig, searchConfig,       
-    {
-      plugins: [
+
+    const plugins = [
         function (hook, vm) {
           hook.doneEach(function() {
             var label, domObj, main, divEle, gitalk;
@@ -116,13 +104,24 @@
             divEle.style = "width: " + main.clientWidth + "px; margin: 0 auto 20px;";
             domObj.appendTo(domObj.find(".content"), divEle);
             gitalk = new Gitalk(
-              Object.assign(gitalkConfig, { id: !label ? "home" : label })
+              Object.assign(
+                {
+                clientID: 'faa3a6842a42f880103d',
+                clientSecret: 'a45bdcc8c8a7d97559ed70f8884401138622d585',
+                repo: 'sucls.github.io',
+                owner: 'sucls',
+                admin: ['sucls'],
+                distractionFreeMode: false,
+                // id: decodeURI(window.location.pathname),
+              }, 
+              { id: !label ? "home" : label })
             );
             gitalk.render("gitalk-container-" + label);
           });
         }
-      ],
-    });                               
+      ];
+    
+    window.$docsify = Object.assign( { }, defaultConfig, markdownConfig, paginationConfig, searchConfig);                               
   </script>
 
   <script src="/assets/js/md5.js"></script>
@@ -142,9 +141,20 @@
   <script src="/assets/js/search.min.js"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script> -->
   <!-- 评论 -->
-  <script src="/assets/js/gitalk.min.js"></script>
-  <!-- <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script> -->
-  <!-- <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script> -->
+  <!-- <script src="/assets/js/gitalk.min.js"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'faa3a6842a42f880103d',
+      clientSecret: 'a45bdcc8c8a7d97559ed70f8884401138622d585',
+      repo: 'sucls.github.io',
+      owner: 'sucls',
+      admin: ['sucls'],
+      distractionFreeMode: false,
+      id: decodeURI(window.location.pathname),
+    });
+  </script>
 
   <script src="/assets/js/prism-bash.js"></script>
   <script src="/assets/js/prism-java.min.js"></script>
