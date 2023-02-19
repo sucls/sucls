@@ -5,7 +5,7 @@ Apache Pulsar是Apache软件基金会顶级项目，是下一代**云原生分�
 Pulsar 作为下一代云原生分布式消息流平台，支持*多租户、持久化存储、多机房跨区域数据复制*，具有强一致性、高吞吐以及低延时的高可扩展流数据存储特性，
 内置诸多其他系统商业版本才有的特性，是云原生时代解决实时消息流数据传输、存储和计算的最佳解决方案。
 
-![message](./assets/images/23_02_05/message.png)
+![message](/assets/images/23_02_05/message.png)
 
 ### Pulsar简介  
 

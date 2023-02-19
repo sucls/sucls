@@ -55,7 +55,7 @@
       auto2top: true,
       alias: { // 
         '/.*/_sidebar.md': '/_sidebar.md',
-        '/.*/assets/': '/assets/'
+        // '/.*/assets/*': '/assets/*'
       },
       basePath: '/',
     };
@@ -76,8 +76,24 @@
         depth: 6,
       }
     }
+
+    const markdownConfig = {
+      markdown: {
+        smartypants: true,
+        renderer: {
+          image: function(href, title, text) {
+            let imageUrl = href;
+            let baseUrl = window.location.origin;
+            if(href.startsWith('/assets/')){
+              imageUrl = baseUrl + href;
+            }
+            return this.origin.image.apply(this, [imageUrl].concat(Array.prototype.slice.call(arguments,1)));
+          }
+        }
+      }
+    }
     
-    window.$docsify = Object.assign( { }, defaultConfig, paginationConfig, searchConfig,       
+    window.$docsify = Object.assign( { }, defaultConfig, markdownConfig, paginationConfig, searchConfig,       
     {
       plugins: [
         function (hook, vm) {
