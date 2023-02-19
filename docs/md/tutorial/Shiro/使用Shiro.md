@@ -1,11 +1,4 @@
----
-layout: post
-title:  Web认证框架之Shiro实战
-tagline: by 沉浮
-categories: 认证授权
-tags: 沉浮
----
-
+## 使用Shrio
 
 前面简单介绍了shiro这个框架的一些基本知识，包括其架构模型，主要的功能，关键名称的含义，以及核心模块和对应的接口定义。
 
@@ -30,13 +23,13 @@ tags: 沉浮
 
   1） 你可以选择通过你的IDE快速创建一个项目，比如通过Intellij Idea，通过File->New->Project选择Maven Archetype创建一个空项目，这里archetype可以选择quickstart
 
-   ![创建项目](/assets/images/2022/sucls/08_04/01.png)
+   ![创建项目](/assets/images/23_08_04/01.png)
 
 > 这里你很可能遇到一个idea的bug，按上图提交后，发现idea卡死了，项目创建失败且无法打开，如果没有就恭喜你了
 
  2）最终我们需要得到一个文件夹，里面有个pom.xml文件，结构可以如下（如果有其他的内容建议删除，比如src，因为这个pom我们作为项目parent维护）
 
-   ![创建结构](/assets/images/2022/sucls/08_04/02.png)
+   ![创建结构](/assets/images/23_08_04/02.png)
 
 ### 添加依赖
 
@@ -206,13 +199,13 @@ private void configureWebSecurityManager(DefaultWebSecurityManager securityManag
 </plugin>
 ```
 这样不需要我们单独弄个tomcat，通过插件即可实现项目热启动，方便调试与静态页面的修改
-   ![启动项目](/assets/images/2022/sucls/08_04/03.png)
+   ![启动项目](/assets/images/23_08_04/03.png)
 
 ### 执行认证
 1）进入系统 http://localhost:8080/ 由于没有登录，跳转到登录页http://localhost:8080/login.jsp
-   ![启动项目](/assets/images/2022/sucls/08_04/05.png)
+   ![启动项目](/assets/images/23_08_04/05.png)
 2）输入用户名密码，按以上的配置admin/123456，登录成功，进入主页
-   ![启动项目](/assets/images/2022/sucls/08_04/04.png)
+   ![启动项目](/assets/images/23_08_04/04.png)
 3）用户鉴权，上面可以看到admin配置了ROLE_ADMIN角色，user配置了ROLE_USER角色，所以
 
 admin登录访问http://localhost:8080/system/getProperties.json 正常返回数据

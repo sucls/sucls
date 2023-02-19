@@ -1,16 +1,3 @@
----
-layout: post
-title:  2023-02-05 Apache Pulsar初试
-tagline: by 沉浮
-categories: 
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-最近项目中准备使用消息中间件*Apache Pulsar*，借着机会先做个简单了解。
-
-<!--more-->
 ## Apache Pulsar
 
 Apache Pulsar是Apache软件基金会顶级项目，是下一代**云原生分布式消息流**平台。
@@ -18,13 +5,13 @@ Apache Pulsar是Apache软件基金会顶级项目，是下一代**云原生分�
 Pulsar 作为下一代云原生分布式消息流平台，支持*多租户、持久化存储、多机房跨区域数据复制*，具有强一致性、高吞吐以及低延时的高可扩展流数据存储特性，
 内置诸多其他系统商业版本才有的特性，是云原生时代解决实时消息流数据传输、存储和计算的最佳解决方案。
 
-![message](/assets/images/2023/sucls/02_05/message.png)
+![message](./assets/images/23_02_05/message.png)
 
 ### Pulsar简介  
 
 + 系统架构
 
-![pulsar-system-architecture](/assets/images/2023/sucls/02_05/pulsar-system-architecture.png)
+![pulsar-system-architecture](/assets/images/23_02_05/pulsar-system-architecture.png)
 
 + 功能特色
   - 支持多租户
@@ -68,7 +55,7 @@ Pulsar 作为下一代云原生分布式消息流平台，支持*多租户、持
 1. window环境使用docker可以使用Docker Desktop，和linux一样可以通过docker命令管理镜像、部署容器等操作。
 > 打开并启动Docker Desktop后，打开终端，执行 _>docker search pulsar 可以查询到pulsar相关的镜像
 
-![pulsar-docer](/assets/images/2023/sucls/02_05/pulsar-docer.png)
+![pulsar-docer](/assets/images/23_02_05/pulsar-docer.png)
 
 2. 镜像下载
 > 这里我们选择分别下载红框的两个镜像，执行命令 
@@ -111,10 +98,10 @@ http://localhost:9527/
 ```
 这里需要保证Pulsar Manager应用服务能够访问到Pulsar应用，由于都是通过Docker部署，配置Service URL需要使用网络IP，不要用localhost。
 ```
-![pulsar-manager-env](/assets/images/2023/sucls/02_05/pulsar-manager-env.png)
+![pulsar-manager-env](/assets/images/23_02_05/pulsar-manager-env.png)
 
 管理界面：
-![pulsar-manager](/assets/images/2023/sucls/02_05/pulsar-manager.png)
+![pulsar-manager](/assets/images/23_02_05/pulsar-manager.png)
 
 ### Pulsar与Springboot集成
 

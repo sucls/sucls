@@ -1,15 +1,3 @@
----
-layout: post
-title:  聊聊Guava Retrying -20221014
-tagline: by 沉浮
-categories: Guava 重试
-tags: 
-- 沉浮
----
-
-
-在web应用中，由于网络原因或其他不可预测的原因，应用间会出现调用失败的情形，通过配置重试策略可以有效解决外在原因导致的系统故障
-<!--more-->
 ## Guava Retry
 
 在web应用中，由于网络原因或其他不可预测的原因，应用间会出现调用失败的情形，通过配置重试策略可以有效解决外在原因导致的系统故障。
@@ -94,7 +82,7 @@ public void retryWhenResultOnFailure() throws ExecutionException, RetryException
 
 ### 执行流程
 
-![执行流程](/assets/images/2022/sucls/10_06/guava-retry.jpg)
+![执行流程](/assets/images/23_10_06/guava-retry.jpg)
 
 通过RetryerBuilder构建Retryer，调用Retryer#call，封装业务代码为其回到函数
 1. 开始循环执行

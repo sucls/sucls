@@ -1,16 +1,4 @@
----
-layout: post
-title:  2023-01-29 unicode
-tagline: by 沉浮
-categories: 
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-
-<!--more-->
-## unicode
+## Unicode和UTF8
 
 Unicode（统一码、万国码、单一码）是一种在计算机上使用的字符编码。Unicode是为了解决传统的字符编码方案的局限而产生的，它为每种语言中的每个字符
 设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求。

@@ -1,17 +1,3 @@
----
-layout: post
-title:  2023-02-15 如何写一个starter
-tagline: by 沉浮
-categories: 
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-前面我们简单介绍了如何使用消息中间件*Apache Pulsar*，但是在项目中那样使用，显然是不太好的，不管从易用性和扩展性来看，都是远远不够，
-为了和springboot项目集成，写一个pulsar-spring-boot-starter是非常有必要的，在此之前，我们先看看一个starter需要些什么。
-
-<!--more-->
 ## Spring Boot Starter
 
 spring-boot的强大之处在于其提供的大量starter组件，基本涵盖了我们开发中的各个技术领域，比如数据库访问有jdbc、jpa；缓存有redis；
@@ -32,12 +18,12 @@ spring-boot的强大之处在于其提供的大量starter组件，基本涵盖�
 如果你之前有看过spring官方starter组件，你会发现主要是基于AutoConfigure及@Enable来实现的。
 
 + *其中AutoConfigure也就是我们常说的自动装配，在spring-boot-autoconfigure包中的目录/METE-INF/spring.factories对应文件中，你可以看到这样的配置：*
-![autoConfigure](/assets/images/2023/sucls/02_05/autoConfigure.png)
+![autoConfigure](/assets/images/23_02_05/autoConfigure.png)
 
 > 当启动Spring Boot项目时这些配置都会被加载（这么多的配置全部加载并处理，难怪启动那么慢）。
 
 + *在starter中依赖的具体实现包中，一般都会提供一个@Enable注解作为部分扩展功能的开关，我们可以在系统中通过该注解引入按需引入配置*
-![enable](/assets/images/2023/sucls/02_05/enable.png)
+![enable](/assets/images/23_02_05/enable.png)
 
 > AutoConfigure配置的一定会被加载，而@Enable有开发者选择使用使用，当然有些组件是没有AutoConfigure，必须通过@Enable来启用
 
@@ -170,7 +156,7 @@ public abstract class AbstractAsyncConfiguration implements ImportAware {
 > 上面主要根据Spring源代码中的例子，了解@Enable、@Import、ImportBeanDefinitionRegistrar、ImportSelector、ImportAware如何搭配使用，
 > 从而实现Spring的动态配置，用一张关系图表示：
 > 
-![relation](/assets/images/2023/sucls/02_05/relation.png)
+![relation](/assets/images/23_02_05/relation.png)
 
 #### 其他扩展
 

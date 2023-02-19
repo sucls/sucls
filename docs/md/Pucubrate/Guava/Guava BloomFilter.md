@@ -1,16 +1,3 @@
----
-layout: post
-title:  2022-10-23 聊聊Guava BloomFilter
-tagline: by 沉浮
-categories: Guava 布隆过滤器
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-
-<!--more-->
-
 ## Guava BloomFilter
 
 布隆过滤器是一个很长的二进制向量和一系列随机映射函数。布隆过滤器可以用于检索一个元素是否在一个集合中。
@@ -52,7 +39,7 @@ tags: 沉浮
 
 ### 实现原理
 
-  ![bloomfilter.png](/assets/images/2022/sucls/10_23/bloomfilter.png)
+  ![bloomfilter.png](/assets/images/23_10_23/bloomfilter.png)
 
   核心其实是元素如何存储？如何判断元素是否存在？
   核心方法就两个，一个“存”一个检查，里面涉及到了算法相关知识，感兴趣可以深入研究下其实现原理与思想。

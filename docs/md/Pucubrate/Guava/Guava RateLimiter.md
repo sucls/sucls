@@ -1,17 +1,3 @@
----
-layout: post
-title:  2022-12-18 Guava RateLimiter
-tagline: by 沉浮
-categories: Guava RateLimiter
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-今天我们继续看看Guava，比较常用的限流工具RateLimiter
-
-<!--more-->
-
 ## Guava RateLimiter
 
 *有没有搞错，别人都在提升系统的访问并发量，你却在这搞限制？*
@@ -56,7 +42,7 @@ tags: 沉浮
 + 固定窗口
 
 通过控制**时间单元**内允许的**请求数量**，一旦达到阈值，则不会处理该请求后续相关的业务或者直接让请求快速失败并给予提示。
-  ![FixedWindowLimiter](/assets/images/2022/sucls/12_18/fixedWindowLimiter.png)
+  ![FixedWindowLimiter](/assets/images/23_12_18/fixedWindowLimiter.png)
 
 <div style="background-color: antiquewhite">
   比如我们配置10s内允许请求的流量为1000，在第1~9s内请求为0，在第9~10秒内的请求数为1000，这样一秒内的请求就达到了1000。当然我们可以时间单元划分成更小粒度，
@@ -69,7 +55,7 @@ tags: 沉浮
 
 为了解决固定窗口算法中存在的问题，通过滑动窗口的方法，将上述时间单元划分成多个细粒度的时间窗口，每个窗口都有自己独立的请求计数器，这样就可以让时间单元内的流量控制均匀地
 落在各个时间窗口上，同时滑动的时间窗口可以形成连续时间区间控制，并不像固定窗口那样只在两个时间刻度间。
-![sliding-window](/assets/images/2022/sucls/12_18/sliding-window.jpeg)
+![sliding-window](/assets/images/23_12_18/sliding-window.jpeg)
 <div style="background-color: antiquewhite">
   比如时间单元为1s，每个时间窗口为100ms，在1秒内的10个时间窗口可以为09:01:01.000~09:01:02.000、09:01:01.200~09:01:02.800...
 </div>
@@ -81,7 +67,7 @@ _问题：滑动窗口的区间划分的越多，则滑动窗口的滚动就越�
 如果将请求看成水滴，限流器看成一个下面开口的桶（漏桶）。漏桶算法其实就是当水滴（请求）先进入到漏桶里，漏桶以一定的速度出水，当水流入速度过大时则会超过桶的可接纳容量，
 这时水将直接溢出，漏桶算法能强行限制数据的传输速率。
 使用漏桶算法，可以保证接口会以一个常速速率来处理请求，所以漏桶算法必定不会出现临界问题。
-![leaky-bucket](/assets/images/2022/sucls/12_18/leaky-bucket.png)
+![leaky-bucket](/assets/images/23_12_18/leaky-bucket.png)
 
 _问题：当短时间内如果有大量的突发请求时，即使服务器负载不高，每个请求也需要等待一段时间（水滴间隔）才能被响应_
 
@@ -89,7 +75,7 @@ _问题：当短时间内如果有大量的突发请求时，即使服务器负�
 
 令牌桶算法会以一个恒定的速度往桶里放入令牌，而如果请求需要被处理，则需要先从桶里获取一个令牌，当桶里没有令牌可取时，则拒绝服务。
 相比“漏桶算法”，“令牌桶算法”能够在限制数据的平均传输速率的同时，还允许能应对流量突增的情况（允许突发请求，只要有足够的令牌，支持一次拿多个令牌）。
-![token-bucket](/assets/images/2022/sucls/12_18/token-bucket.jpg)
+![token-bucket](/assets/images/23_12_18/token-bucket.jpg)
 
 ### 实现示例
 

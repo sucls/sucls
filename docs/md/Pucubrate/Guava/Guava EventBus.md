@@ -1,21 +1,8 @@
----
-layout: post
-title:  2022-12-21 Guava EventBus
-tagline: by 沉浮
-categories: Guava EventBus
-tags: 沉浮
----
-
-哈喽，大家好，我是指北君。  
-
-今天我们继续看看Guava，比较好用的事件驱动工具EventBus
-
-<!--more-->
 ## Guava EventBus
 
 EventBus是Guava的事件处理机制，是设计模式中观察者模式（生产/消费者编程模型）的优雅实现。对于事件监听和发布订阅模式，EventBus使用非常简单便捷。
 
-![event-listener](/assets/images/2022/sucls/12_21/event-listener.png)
+![event-listener](/assets/images/23_12_21/event-listener.png)
 
 如果你做过CS的开发，下面这段代码可能会比较熟悉。
 
@@ -110,7 +97,7 @@ public class ProductOrder {
 
     可以是任何对象，当然不建议将基础类型或String作为事件类型，这样就没法做到按类型区分了
 
-![event-bus](/assets/images/2022/sucls/12_21/event-bus.png)
+![event-bus](/assets/images/23_12_21/event-bus.png)
 
 通过上面的图就可以很清楚各个各个组件的职责，以及如何通过事件总线完成事件向监听的传播，最终基于事件回调机制完成消息传递。基于事件驱动的服务模型
 	

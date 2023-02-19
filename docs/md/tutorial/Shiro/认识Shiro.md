@@ -1,14 +1,5 @@
----
-layout: post
-title:  认识Web认证框架之Shiro - 20220815
-tagline: by 沉浮
-categories: Security
-tags: 沉浮
----
 
-Shiro
-<!--more-->
-## 开始的话
+## Shiro
 
    记得做的第一个Web项目，系统认证授权这块就是基于Shiro实现的，当时也是第一次接触到这种类型的框架，同时是基于Spring做的集成，并且相关的配置都已经是定制好的，只需要我们根据项目情况对极少部分配置进行修改即可使用。对于其原理也只是知道个大概，具体实现细节可以说是一无所知。
       
@@ -22,7 +13,7 @@ Shiro
 
    > Apache Shiro是一个功能强大且易于使用的Java安全框架，可执行身份验证、授权、加密和会话管理。
 
-   ![特色](/assets/images/2022/sucls/08_03/03_ShiroFeatures.png)
+   ![特色](/assets/images/23_08_03/03_ShiroFeatures.png)
 
    主要功能：
 
@@ -49,7 +40,7 @@ Shiro
 
 ## 实现架构
 
-   ![架构](/assets/images/2022/sucls/08_03/03_ShiroArchitecture.png)
+   ![架构](/assets/images/23_08_03/03_ShiroArchitecture.png)
 
    + Subject( org.apache.shiro.subject.Subject) 当前与软件交互的实体（用户、第三方服务、cron任务等）的特定的安全性的“视图”。
 
@@ -381,7 +372,7 @@ public class ShiroFilter extends AbstractShiroFilter {
 
 ## 认证流程
 
-   ![认证流程](/assets/images/2022/sucls/08_03/03_ShiroAuthenticationSequence.png)
+   ![认证流程](/assets/images/23_08_03/03_ShiroAuthenticationSequence.png)
 
    第1步：应用程序代码调用该Subject.login方法，传入代表最终用户的主体和凭据的构造AuthenticationToken实例。
 

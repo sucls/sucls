@@ -30,6 +30,7 @@
 
 <body>
   <div id="app"></div>
+  
   <script>
     var gitalkConfig = {
       clientID: 'faa3a6842a42f880103d',
@@ -54,7 +55,9 @@
       auto2top: true,
       alias: { // 
         '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/assets/': '/assets/'
       },
+      basePath: '/',
     };
     ////////////////// 分页插件 //////////////////
     const paginationConfig = {

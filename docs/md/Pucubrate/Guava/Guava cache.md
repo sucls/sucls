@@ -1,10 +1,4 @@
----
-layout: post
-title:  聊聊Guava Cache-20220921
-tagline: by 沉浮
-categories: 缓存 guava
-tags: 沉浮
----
+## Guava Cache
 
 缓存技术被认为是减轻服务器负载、降低网络拥塞、增强Web可扩展性的有效途径之一，其基本思想是利用客户访问的时间局部性（Temproral Locality）原理，
 将客户访问过的内容在Cache中存放一个副本，当该内容下次被访问时，不必连接到驻留网站，而是由Cache中保留的副本提供。
