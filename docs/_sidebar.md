@@ -13,11 +13,20 @@
   + Netty系列
 
 
-<!-- Pucubrate -->
+<!-- Technical -->
 * **技术研究**
   + Guava
+    - [Guava-Cache](./md/Technical/Guava/Guava Cache.md)
+    - [Guava-Collect](./md/Technical/Guava/Guava Collect.md)
+    - [Guava-Retry](./md/Technical/Guava/Guava Retry.md)
+    - [Guava-BloomFilter](./md/Technical/Guava/Guava BloomFilter.md)
+    - [Guava-IO](./md/Technical/Guava/Guava Cache.md)
+    - [Guava-RateLimiter](./md/Technical/Guava/Guava Cache.md)
+    - [Guava-Bus](./md/Technical/Guava/Guava Cache.md)
   + 其他
-    - class编译混淆
+    - [正则表达式](./md/Technical/Other/正则表达式.md)
+    - [编译混淆](./md/Technical/Other/代码混淆技术.md)
+    - [Unicode和UTF8](./md/Technical/Other/Unicode和UTF8.md)
 
 
 <!-- Principle -->  
@@ -42,6 +51,7 @@
   + SpringBoot
   + 消息队列
     - [开始ApachePulsar](./md/Explain/MQ/开始ApachePulsar.md)
+    - [如何写一个pulsar-spring-boot-starter](./md/Explain/MQ/如何写一个pulsar-spring-boot-starter.md)
   + 缓存
   + 搜索引擎
   + 工作流
