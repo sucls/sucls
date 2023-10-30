@@ -113,6 +113,7 @@
                 admin: ['sucls'],
                 distractionFreeMode: false,
                 // id: decodeURI(window.location.pathname),
+				id: md5(window.location.host)
               }, 
               { id: !label ? "home" : label })
             );
@@ -153,6 +154,8 @@
       admin: ['sucls'],
       distractionFreeMode: false,
       id: decodeURI(window.location.pathname),
+	  recentComment: true,
+	  proxy: ''
     });
   </script>
 

@@ -39,7 +39,7 @@
   + SPI
   + AOP
     - [AOP-javassit](./md/Principle/AOP/AOP-javassit.md)
-    - [AOP-Spring](./md/Principle/AOP/AOP-Springt.md)
+    - [AOP-Spring](./md/Principle/AOP/AOP-Spring.md)
     - [再看AOP](./md/Principle/AOP/再看AOP.md)
 
 
